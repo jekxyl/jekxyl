@@ -1,0 +1,42 @@
+{
+    "name"       : "jekxyl/jekxyl",
+    "description": "Static website generator using the XYL language.",
+    "type"       : "bin",
+    "keywords"   : ["website", "static", "generator", "xyl"],
+    "homepage"   : "https://github.com/jekxyl/jekxyl",
+    "license"    : "BSD-3-Clause",
+    "authors"    : [
+        {
+            "name" : "Raphaël Emourgeon",
+            "email": "raphael.emourgeon@gmail.com"
+        },
+        {
+            "name" : "Ivan Enderlin",
+            "email": "ivan.enderlin@hoa-project.net"
+        }
+    ],
+    "support": {
+        "irc"   : "irc://irc.freenode.org/hoaproject",
+        "source": "https://github.com/jekxyl/jekxyl"
+    },
+    "require": {
+        "hoa/console"   : "~3.0",
+        "hoa/dispatcher": "~1.0",
+        "hoa/file"      : "~1.0",
+        "hoa/http"      : "~1.0",
+        "hoa/router"    : "~3.0",
+        "hoa/xyl"       : "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jekxyl\\Bin\\": "Bin/",
+            "Jekxyl\\"     : "Library/"
+        }
+    },
+    "bin"  : ["jekxyl"],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    }
+}
