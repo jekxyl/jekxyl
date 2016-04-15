@@ -1,0 +1,137 @@
+@font-face {
+    font-family: Pre;
+    src: url('../Font/DroidSansMono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+code {
+    font-family: Pre;
+    font-size: .9em;
+}
+
+pre {
+    position: relative;
+    font-size: .95rem;
+    line-height: 1.25em;
+    margin: 0 -8rem;
+    padding: .5em 8rem;
+    overflow-x: scroll;
+    background: rgb(238, 232, 213);
+}
+
+    @media all and (max-width: 800px) {
+        pre {
+            margin-left: -2.8rem;
+            margin-right: -2.8rem;
+            padding-left: 2.8rem;
+            padding-right: 2.8rem;
+        }
+    }
+
+    pre > code {
+        color: inherit;
+        font-size: .95rem;
+    }
+
+    code[class*="language-"] {
+        color: #000;
+    }
+
+    .language-php {
+        color: #07a !important;
+    }
+
+    .language-pp {
+        color: #549848 !important;
+    }
+
+    .token.comment,
+    .token.icomment,
+    .token.prolog,
+    .token.doctype,
+    .token.cdata {
+        color: #939393;
+    }
+
+    .token.selector,
+    .token.attr-name,
+    .token.string {
+        color: #549848;
+    }
+
+    .token.atrule,
+    .token.attr-value,
+    .token.keyword {
+        color: #07a;
+    }
+
+    .token.property,
+    .token.tag,
+    .token.number,
+    .token.constant {
+        color: #994f78;
+    }
+
+    .token.php,
+    .token.operator {
+        color: #926fa7;
+    }
+
+    .token.url,
+    .token.special_variable,
+    .token.variable {
+        color: #c68f26;
+    }
+
+    .token.punctuation {
+        color: #999;
+    }
+
+    .token.input {
+        text-decoration: blink;
+    }
+
+    .line-highlight,
+    .line-marker {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: .3em;
+        padding: .15em 0;
+        pointer-events: none;
+        background: hsla(24, 20%, 50%, .15);
+    }
+
+    .line-highlight::before,
+    .line-highlight[data-end]::after,
+    .line-marker::before {
+        content: attr(data-start);
+        position: absolute;
+        left: 5.5rem;
+        font-size: .8em;
+        text-align: center;
+        width: 2.7em;
+        color: #fff;
+        border-radius: 12px;
+        background: hsla(24, 20%, 50%, .4);
+    }
+
+        @media all and (max-width: 800px) {
+            .line-highlight::before,
+            .line-highlight[data-end]::after,
+            .line-marker::before {
+                left: .3rem;
+            }
+        }
+
+    .line-highlight[data-end]::after {
+        content: attr(data-end);
+        bottom: .3em;
+    }
+
+    .line-marker[data-marker]::after {
+        content: attr(data-marker);
+        position: absolute;
+        left: 3em;
+    }
