@@ -4,7 +4,7 @@ namespace Jekxyl\Bin;
 
 use Hoa\Console;
 
-class Init extends Console\Dispatcher\Kit
+class Welcome extends Console\Dispatcher\Kit
 {
     protected $options = [
         ['help', Console\GetOption::NO_ARGUMENT, 'h'],
@@ -30,13 +30,18 @@ class Init extends Console\Dispatcher\Kit
             }
         }
 
+        echo
+            'Jekxyl', "\n\n",
+            'List of available commands:', "\n",
+            '  * new    Create a new jekxyl project.', "\n";
+
         return;
     }
 
     public function usage()
     {
         echo
-            'Usage   : init <options>', "\n",
+            'Usage   : welcome <options>', "\n",
             'Options :', "\n",
             $this->makeUsageOptionsList([
                 'help' => 'This help.'
