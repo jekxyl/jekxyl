@@ -4,7 +4,6 @@ namespace Jekxyl\Bin;
 
 use Hoa\Console;
 use Hoa\File;
-use RuntimeException;
 
 class _New extends Console\Dispatcher\Kit
 {

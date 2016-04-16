@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-stylesheet href="hoa://Application/Source/Public/Css/Layout.css"?>
+<?xyl-meta name="viewport" content="initial-scale=1.0"?>
+
+<document xmlns="http://hoa-project.net/xyl/xylophone">
+  <title bind="?title" />
+
+  <aside id="side" aria-selected="false">
+    <ul class="raw">
+      <li>Gordon Freeman</li>
+      <li>Scientist</li>
+      <li>Hacker</li>
+    </ul>
+  </aside>
+
+  <div aria-controls="side">
+    <img src="hoa://Application/Public/Image/Icon/Circled_plus.svg" alt="Menu" />
+  </div>
+
+  <div id="body">
+    <header>
+      <h1><a href="@home"><code>My website</code></a></h1>
+    </header>
+
+    <article id="main" />
+
+    <footer>
+      <p>Copyright © <value formatter="date" formatter-format="Y" />, Gordon Freeman. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <yield id="scripts">
+    <script>
+      document.addEventListener(
+        'readystatechange',
+        function () {
+          if ('complete' !== document.readyState) {
+            return;
+          }
+
+          var aside = document.querySelector('#side');
+
+          document
+            .querySelector('div[aria-controls="side"]')
+            .addEventListener(
+              'click',
+              function () {
+                aside.setAttribute(
+                  'aria-selected',
+                  'false' === aside.getAttribute('aria-selected')
+                );
+              },
+              false
+            );
+        }
+      );
+    </script>
+  </yield>
+</document>

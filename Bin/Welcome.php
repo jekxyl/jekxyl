@@ -33,7 +33,8 @@ class Welcome extends Console\Dispatcher\Kit
         echo
             'Jekxyl', "\n\n",
             'List of available commands:', "\n",
-            '  * new    Create a new jekxyl project.', "\n";
+            '  * new        Create a new jekxyl project.', "\n",
+            '  * compile    Build or rebuild the static website.', "\n";
 
         return;
     }
