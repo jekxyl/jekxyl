@@ -3,6 +3,8 @@
 namespace Jekxyl;
 
 use Hoa\File;
+use Hoa\Xyl;
+use Hoa\Http;
 
 class Compiler
 {
@@ -32,8 +34,15 @@ class Compiler
                 return -1 * strcmp($a->getPathname(), $b->getPathname());
             });
 
-        foreach ($finder as $filename) {
-            var_dump($filename);
+        foreach ($finder as $file) {
+            $xyl = new Xyl(
+                new File\Read('hoa://Application/Source/Layouts/Default.xyl'),
+                new Http\Response(),
+                new Xyl\Interpreter\Html(),
+                $this->_router
+            );
+            $xyl->addOverlay($file->getPathname());
+            $xyl->render();
         }
     }
 }
