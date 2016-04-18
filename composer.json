@@ -22,6 +22,7 @@
     "require": {
         "hoa/console"     : "~3.0",
         "hoa/dispatcher"  : "~1.0",
+        "hoa/event"       : "~1.0",
         "hoa/file"        : "~1.0",
         "hoa/http"        : "~1.0",
         "hoa/protocol"    : "~1.0",
