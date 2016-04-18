@@ -168,7 +168,7 @@ class Post
         return $this->_router->unroute(
             'post',
             [
-                'pathname' => $this->_file->getRelativePathname()
+                'pathname' => preg_replace('/\.xyl$/', '.html', $this->_file->getRelativePathname())
             ]
         );
     }
