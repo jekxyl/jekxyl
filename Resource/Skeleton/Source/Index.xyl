@@ -6,9 +6,10 @@
       <li bind="?posts">
         <aside class="detail">
           <time datetime="(?date)">
-            <value formatter="date"
-                   formatter-format="jS M. Y"
-                   formatter-timestamp="(?timestamp)" />
+            <value
+              formatter="date"
+              formatter-format="jS M. Y"
+              formatter-timestamp="(?timestamp)" />
           </time>
         </aside>
         <a href="(?url)" bind="?title" />
