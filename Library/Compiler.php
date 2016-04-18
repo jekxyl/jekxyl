@@ -73,4 +73,26 @@ class Compiler
 
         return;
     }
+
+    public function buildAssets()
+    {
+        $source      = 'hoa://Jekxyl/Source/Public/';
+        $destination = 'hoa://Jekxyl/Dist/';
+
+        File\Directory::create($destination);
+
+        $finder = new File\Finder();
+        $finder
+            ->in($source)
+            ->files()
+            ->directories()
+            ->maxDepth(1);
+
+        foreach ($finder as $file) {
+            $file->open()->copy($destination);
+            $file->close();
+        }
+
+        return;
+    }
 }

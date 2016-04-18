@@ -82,6 +82,10 @@ class Compile extends Console\Dispatcher\Kit
         $compiler->buildIndex();
         echo 'OK', "\n";
 
+        echo 'Building assets… ';
+        $compiler->buildAssets();
+        echo 'OK', "\n";
+
         return;
     }
 

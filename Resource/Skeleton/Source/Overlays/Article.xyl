@@ -12,8 +12,7 @@
           <value
             formatter="date"
             formatter-format="jS F Y"
-            formatter-timestamp="(?timestamp)" />
-        </time>.
+            formatter-timestamp="(?timestamp)" /></time>.
       </small>
     </p>
   </article>

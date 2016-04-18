@@ -12,7 +12,6 @@ $router
         'post',
         '/p/(?<pathname>[\w\d\-_]+)'
     )
-
     ->_get(
         '_resource',
         '/(?<resource>)'
