@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <ul class="raw tabular">
+      <li bind="?posts">
+        <aside class="detail">
+          <time datetime="(?date)">
+            <value formatter="date"
+                   formatter-format="jS M. Y"
+                   formatter-timestamp="(?timestamp)" />
+          </time>
+        </aside>
+        <a href="(?url)" bind="?title" />
+      </li>
+    </ul>
+  </article>
+</overlay>

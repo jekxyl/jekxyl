@@ -63,9 +63,10 @@ class Compile extends Console\Dispatcher\Kit
             );
         }
 
-        $protocol                  = Protocol::getInstance();
-        $protocol['Application'][] = new Protocol\Node('Source', "\r" . $source . DS);
-        $protocol['Application'][] = new Protocol\Node('Dist', "\r" . $destination . DS);
+        $protocol             = Protocol::getInstance();
+        $protocol['Jekxyl'][] = new Protocol\Node('Source', "\r" . $source . DS);
+        $protocol['Jekxyl'][] = new Protocol\Node('Dist', "\r" . $destination . DS);
+        $protocol['Application']->setReach($source . DS);
 
         $compiler = new Compiler();
 
@@ -77,7 +78,9 @@ class Compile extends Console\Dispatcher\Kit
         $compiler->buildPosts();
         echo 'OK', "\n";
 
-
+        echo 'Building index… ';
+        $compiler->buildIndex();
+        echo 'OK', "\n";
 
         return;
     }

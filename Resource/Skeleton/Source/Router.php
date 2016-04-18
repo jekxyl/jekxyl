@@ -10,7 +10,7 @@ $router
     )
     ->get(
         'post',
-        '/P/(?<url>[\w\d\-_]+)'
+        '/p/(?<pathname>[\w\d\-_]+)'
     )
 
     ->_get(

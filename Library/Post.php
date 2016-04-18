@@ -83,7 +83,7 @@ class Post
 
     protected function computeXyl()
     {
-        $layout  = 'hoa://Application/Source/Layouts/' . $this->getLayoutFilename();
+        $layout  = 'hoa://Jekxyl/Source/Layouts/' . $this->getLayoutFilename();
         $overlay = $this->_streamName;
         $router  = $this->getRouter();
 
@@ -129,11 +129,7 @@ class Post
 
     public function getOutputPathname()
     {
-        return str_replace(
-            ['hoa://Application/Source/', '.xyl'],
-            ['hoa://Application/Dist/', '.html'],
-            $this->_file->getPathname()
-        );
+        return 'hoa://Jekxyl/Dist/' . ltrim($this->getUrl(), '/');
     }
 
     public function getRouter()
@@ -165,5 +161,15 @@ class Post
     public function getLayoutFilename()
     {
         return $this->getMetas()['layout'] . '.xyl';
+    }
+
+    public function getUrl()
+    {
+        return $this->_router->unroute(
+            'post',
+            [
+                'pathname' => $this->_file->getRelativePathname()
+            ]
+        );
     }
 }
