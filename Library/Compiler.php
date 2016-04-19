@@ -89,7 +89,7 @@ class Compiler
             ->maxDepth(1);
 
         foreach ($finder as $file) {
-            $file->open()->copy($destination);
+            $file->open()->copy($destination . $file->getRelativePathname());
             $file->close();
         }
 
