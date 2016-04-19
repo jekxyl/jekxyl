@@ -1,9 +1,6 @@
 @font-face {
     font-family: Text;
-    src: url('http://static.hoa-project.net/Font/Palladio.woff') format('woff'),
-         url('http://static.hoa-project.net/Font/Palladio.otf')  format('otf'),
-         url('http://static.hoa-project.net/Font/Palladio.eot')  format('eot'),
-         url('http://static.hoa-project.net/Font/Palladio.ttf')  format('truetype');
+    src: url('../Font/Palladio.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -88,7 +85,7 @@ header {
     text-shadow: #000 0 0 15px;
     line-height: 10em;
     margin-bottom: 6em;
-    background: rgb(211, 54, 130);
+    background: transparent url('../Image/Header.jpg') 50% 50% no-repeat;
     background-size: cover;
     border: rgb(211, 54, 130) solid;
     border-width: 2px 0 .75em 0;

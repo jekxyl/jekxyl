@@ -74,7 +74,7 @@ class Serve extends Console\Dispatcher\Kit
             }
         );
 
-        echo 'Serve is listening ', $root, ' on ', $address, '.', "\n\n";
+        echo 'Server is listening ', $root, ' on ', $address, '.', "\n\n";
 
         $processus->run();
 

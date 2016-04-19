@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xyl-use href="hoa://Application/Definitions/Math.xyl"?>
+<?xyl-stylesheet href="hoa://Application/Public/Static/Css/Code.css"?>
 
 <overlay xmlns="http://hoa-project.net/xyl/xylophone">
   <article id="main">
@@ -19,5 +20,6 @@
 
   <yield id="scripts">
     <!-- Additional `<script />` here. -->
+    <script src="http://prismjs.com/prism.js"></script>
   </yield>
 </overlay>
