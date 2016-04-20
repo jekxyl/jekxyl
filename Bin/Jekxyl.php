@@ -1,8 +1,5 @@
 <?php
 
-var_dump('hello');
-exit;
-
 use Hoa\Console;
 use Hoa\Dispatcher;
 use Hoa\Exception;
@@ -23,7 +20,7 @@ try {
 
     $dispatcher = new Dispatcher\ClassMethod([
         'synchronous.call'
-            => 'Marvirc\Bin\(:%variables.command:lU:)',
+            => 'Jekxyl\Bin\(:%variables.command:ls/new/_New/U:)',
         'synchronous.able'
             => 'main'
     ]);
