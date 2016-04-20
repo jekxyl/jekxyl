@@ -45,7 +45,7 @@
     </p>
     <pre><code class="language-shell">$ jekxyl compile --source MyProject/Source --destination MyProject/Destination</code></pre>
     <p>
-      <em lang="fr">Et voià</em>, a nice <code>MyProject/Dist/index.html</code>
+      <em lang="fr">Et voilà</em>, a nice <code>MyProject/Dist/index.html</code>
       has been created. Because all links are absolute, to watch the Web
       application with all the comfort, one might use the <code>jekxyl
       serve</code> command to start an HTTP server. This command expects at
@@ -55,43 +55,156 @@
 Server is listening MyProject/Dist on 127.0.0.1:8888</code></pre>
     <p>
       Thus, open <a href="http://127.0.0.1:8888"><code>127.0.0.1:8888</code></a>
-      in your favorioute browser and see your first Web application with Jekxyl!
+      in your favorite browser and see your first Web application with Jekxyl!
     </p>
 
     <h2>Explore the defaults</h2>
 
+    <p>The big picture:</p>
     <pre><code class="language-shell">$ tree MyProject
 MyProject
 ├── Dist
-├── README.md
 └── Source
     ├── Definitions
-    │   └── Math.xyl
-    ├── Index.xyl
     ├── Layouts
-    │   └── Default.xyl
     ├── Overlays
-    │   └── Article.xyl
     ├── Pages
     ├── Posts
-    │   └── 2016-04-Hello-world.xyl
-    ├── Public
-    │   ├── Static
-    │   │   ├── Css
-    │   │   │   ├── Layout.css
-    │   │   │   └── UI.css
-    │   │   ├── Font
-    │   │   │   └── DroidSansMono.woff
-    │   │   │   └── Palladio.woff
-    │   │   ├── Image
-    │   │   │   ├── Header.jpg
-    │   │   │   └── Icon
-    │   │   │       └── Circled_plus.svg
-    │   │   └── Javascript
-    │   ├── atom.xml
-    │   └── manifest.webapp
-    └── Router.php
+    └── Public
+        └── Static
+            ├── Css
+            ├── Font
+            ├── Image
+            │   └── Icon
+            └── Javascript
 
-14 directories, 15 files</code></pre>
+14 directories</code></pre>
+    <p>
+      By default, the <code>Source/</code> directory represents the source of
+      the Web application. This directory can be renamed as you like and moved
+      wherever you want. It does not matter. The <code>Dist/</code> directory
+      represents the compiled Web application. <em>A l'instar</em> of the
+      <code>Source/</code>, it can be renamed to whatever you want and moved.
+    </p>
+    <p>
+      Inside the source directory, there are the following directories (in
+      reverse order):
+    </p>
+    <ul>
+      <li>
+        <code>Public</code>, which contains all the public files, like the CSS
+        stylesheets, the fonts, the images, some Javascripts libraries, even the
+        <code>manifest.webapp</code> file etc. The structure inside this
+        directory is not immutable, you can change it,
+      </li>
+      <li>
+        <code>Posts</code>, which contains all the blog posts, like this one.
+        The structure inside this directory is not immutable, you can change it,
+      </li>
+      <li>
+        <code>Pages</code>, which contains extra pages. The structure inside
+        this directory is not immutable, you can change it,
+      </li>
+      <li>
+        <code>Overlays</code>, which contains overlays. This is a kind of XYL
+        document. An overlay adds elements inside the document where it is
+        called. For instance, the <code>Article.xyl</code> overlay automatically
+        adds a title to the article (the blog post), a <cite>Written the
+        …</cite> mention and add Javascript scripts. Also, because the overlay
+        requires a CSS stylesheet (<code>Code.css</code>), it will be added to
+        the final document too. Our blog post files (in the <code>Posts</code>
+        directory) only need to require this overlay to receive these new
+        elements,
+      </li>
+      <li>
+        <code>Definitions</code>, which contains definitions. This is a kind of
+        XYL document. A definition declares new XYL element, like
+        <code>&amp;amp;lt;text></code> and <code>&amp;amp;lt;dot></code> in the
+        <code>Math.xyl</code> definition file. Then, we are able to use them as
+        follow: <code>&amp;amp;lt;tex>x \in [7;42]&amp;amp;lt;/tex></code>,
+      </li>
+      <li>
+        <code>Layouts</code>, which contains layouts for your pages. The
+        <code>Default.xyl</code> layout is the… default one (damn naming…)!
+      </li>
+    </ul>
+    <p>That's all for the defaults!</p>
+
+    <h2>Hack</h2>
+
+    <p>Now it's time to hack your Web application.</p>
+
+    <h3>Change the layout</h3>
+
+    <p>
+      Each pages and posts can use a different layout. By default, the
+      <code>Default.xyl</code> file will be used. You can get inspired by it. It
+      requires 2 CSS stylesheets with the
+      <code>&amp;amp;lt?xyl-stylesheet></code>
+      processing-instruction. It also declares meta data with the 
+      <code>&amp;amp;lt?xyl-meta></code> processing-instruction.
+    </p>
+    <p>
+      To change the layout, you need to use
+      <code>&amp;amp;lt?xyl-meta></code> processing-instruction by
+      using <code>layout</code> as the name of the meta data and
+      <code>value</code> for its value, such as:
+    </p>
+    <pre><code class="language-markup">&amp;lt;?xyl-meta name="layout" value="Awesome"></code></pre>
+    <p>
+      This example requires to use the <code>Layouts/Awesome.xyl</code> layout.
+      The layout must be a XYL document of kind <code>document</code>. Each page
+      and post is actually an overlay adding at least one element of kind
+      <code>article</code> inside the <code>main</code> ID.
+    </p>
+    <p>The simplest layout can be the following:</p>
+    <pre><code class="language-markup">&amp;lt;?xml version="1.0" encoding="utf-8"?>
+&amp;lt;?xyl-stylesheet href="hoa://Application/Public/Static/Css/Simple.css"?>
+&amp;lt;?xyl-meta name="viewport" content="initial-scale=1.0"?>
+
+&amp;lt;document xmlns="http://hoa-project.net/xyl/xylophone">
+  &amp;lt;title bind="?title" />
+
+  &amp;lt;main>
+    &amp;lt;header>
+      &amp;lt;h1>&amp;lt;a href="@home">&amp;lt;code>My website&amp;lt;/code>&amp;lt;/a>&amp;lt;/h1>
+    &amp;lt;/header>
+
+    &amp;lt;article id="main" />
+
+    &amp;lt;footer>
+      &amp;lt;p>
+        Copyright © &amp;lt;value formatter="date" formatter-format="Y" />, Gordon Freeman.
+        All rights reserved.
+      &amp;lt;/p>
+    &amp;lt;/footer>
+  &amp;lt;/main>
+&amp;lt;/document></code></pre>
+    <p>
+      Note the <code>&amp;amp;lt;article id="main"></code> handle for the
+      overlays.
+    </p>
+
+    <h3>The <code>hoa://</code> protocol</h3>
+
+    <p>
+      One might notice that all resources (like CSS stylesheets, images,
+      overlays, definitions etc.) uses the <code>hoa://</code> protocol. This is
+      a way to abstract the access to resources. Wherever you are,
+      <code>hoa://Application</code> will always point to the root of the
+      source directory. Thus, <code>hoa://Application/Public/</code> points to
+      <code>MyProject/Source/Public/</code>. Whenever the file is in the source
+      directory or in the destination directory, these <code>hoa://</code> paths
+      can be resolved appropriately.
+    </p>
+    <p>
+      Special mention for the <code>hoa://Application/Public/</code> which is
+      transformed twice in the userland (i.e. from your point of view). It is
+      transformed into the real path and it is also transformed in the final
+      HTML for the “HTTP path”.
+    </p>
+
+    <h3>Create new overlays</h3>
+
   </article>
 </overlay>
