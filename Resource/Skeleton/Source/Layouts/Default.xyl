@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xyl-stylesheet href="hoa://Application/Public/Static/Css/Layout.css"?>
-<?xyl-stylesheet href="hoa://Application/Public/Static/Css/UI.css"?>
+<?xyl-stylesheet href="hoa://Application/Public/static/css/layout.css"?>
+<?xyl-stylesheet href="hoa://Application/Public/static/css/ui.css"?>
 <?xyl-meta name="viewport" content="initial-scale=1.0"?>
 <?xyl-link type="application/atom+xml" rel="alternate" href="/atom.xml"?>
 
@@ -12,12 +12,12 @@
       <li>Gordon Freeman</li>
       <li>Scientist</li>
       <li>Hacker</li>
-      <li><a href="@page:pathname=About.html">About</a></li>
+      <li><a href="@page:pathname=about.html">About</a></li>
     </ul>
   </aside>
 
   <div aria-controls="side">
-    <img src="hoa://Application/Public/Static/Image/Icon/Circled_plus.svg" alt="Menu" />
+    <img src="hoa://Application/Public/static/image/icon/circled_plus.svg" alt="Menu" />
   </div>
 
   <main id="body">

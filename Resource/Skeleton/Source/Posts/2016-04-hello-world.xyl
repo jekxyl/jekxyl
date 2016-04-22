@@ -71,12 +71,12 @@ MyProject
     ├── Pages
     ├── Posts
     └── Public
-        └── Static
-            ├── Css
-            ├── Font
-            ├── Image
-            │   └── Icon
-            └── Javascript
+        └── static
+            ├── css
+            ├── font
+            ├── image
+            │   └── icon
+            └── javascript
 
 14 directories</code></pre>
     <p>
@@ -159,7 +159,7 @@ MyProject
     </p>
     <p>The simplest layout can be the following:</p>
     <pre><code class="language-markup">&amp;lt;?xml version="1.0" encoding="utf-8"?>
-&amp;lt;?xyl-stylesheet href="hoa://Application/Public/Static/Css/Simple.css"?>
+&amp;lt;?xyl-stylesheet href="hoa://Application/Public/static/css/simple.css"?>
 &amp;lt;?xyl-meta name="viewport" content="initial-scale=1.0"?>
 
 &amp;lt;document xmlns="http://hoa-project.net/xyl/xylophone">
