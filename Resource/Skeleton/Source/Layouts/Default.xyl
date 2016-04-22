@@ -2,6 +2,7 @@
 <?xyl-stylesheet href="hoa://Application/Public/Static/Css/Layout.css"?>
 <?xyl-stylesheet href="hoa://Application/Public/Static/Css/UI.css"?>
 <?xyl-meta name="viewport" content="initial-scale=1.0"?>
+<?xyl-link type="application/atom+xml" rel="alternate" href="/atom.xml"?>
 
 <document xmlns="http://hoa-project.net/xyl/xylophone">
   <title bind="?title" />

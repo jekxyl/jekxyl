@@ -90,6 +90,10 @@ class Compile extends Console\Dispatcher\Kit
         $compiler->buildAssets();
         echo 'OK', "\n";
 
+        echo 'Building atom feed… ';
+        $compiler->buildAtom();
+        echo 'OK', "\n";
+
         return;
     }
 

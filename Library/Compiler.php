@@ -110,4 +110,12 @@ class Compiler
 
         return;
     }
+
+    public function buildAtom()
+    {
+        $atom = new Atom(array_slice($this->_posts, 0, 10));
+        $atom->render();
+
+        return;
+    }
 }
