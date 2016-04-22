@@ -2,12 +2,12 @@
 
 namespace Jekxyl;
 
-class Post extends Document
+class Page extends Document
 {
     public function getUrl()
     {
         return $this->_router->unroute(
-            'post',
+            'page',
             [
                 'pathname' => preg_replace('/\.xyl$/', '.html', $this->_file->getRelativePathname())
             ]

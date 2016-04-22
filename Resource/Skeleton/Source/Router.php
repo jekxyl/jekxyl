@@ -9,6 +9,10 @@ $router
         '/'
     )
     ->get(
+        'page',
+        '/(?<pathname>[\w\d\-_]+)'
+    )
+    ->get(
         'post',
         '/p/(?<pathname>[\w\d\-_]+)'
     )

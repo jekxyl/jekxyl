@@ -23,6 +23,21 @@ class Compiler
         File\Directory::create('hoa://Jekxyl/Dist');
     }
 
+    public function buildPages()
+    {
+        $finder = new File\Finder();
+        $finder
+            ->in('hoa://Jekxyl/Source/Pages/')
+            ->files()
+            ->name('/\.xyl$/');
+
+        foreach ($finder as $file) {
+            (new Page($file, $this->_router))->render();
+        }
+
+        return;
+    }
+
     public function buildPosts()
     {
         $finder = new File\Finder();

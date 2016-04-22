@@ -74,6 +74,10 @@ class Compile extends Console\Dispatcher\Kit
         $compiler->reset();
         echo 'OK', "\n";
 
+        echo 'Building pages… ';
+        $compiler->buildPages();
+        echo 'OK', "\n";
+
         echo 'Building posts… ';
         $compiler->buildPosts();
         echo 'OK', "\n";
