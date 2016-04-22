@@ -21,7 +21,7 @@
 
   <main id="body">
     <header>
-      <h1><a href="@home"><code>My website</code></a></h1>
+      <h1><a href="@home">Foobar</a></h1>
     </header>
 
     <article id="main" />
