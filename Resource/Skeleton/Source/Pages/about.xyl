@@ -1,4 +1,37 @@
-                                New BSD License
+<?xml version="1.0" encoding="utf-8"?>
+<?xyl-meta name="title" value="About Jekxyl"?>
+<?xyl-meta name="date" value="2016-04-22T16:51:33+02:00"?>
+
+<overlay xmlns="http://hoa-project.net/xyl/xylophone">
+  <article id="main">
+    <h1>About Jekxyl</h1>
+
+    <p>
+      This Web application is build with Jekxyl. Jekxyl is a static Web
+      application generator based on XYL technology. This is a project from the
+      <a href="http://hoa-project.net/">Hoa project</a> foundation.
+    </p>
+
+    <h2>Information</h2>
+
+    <p>
+      The original author is <a href="https://twitter.com/raphaeI">Raphaël
+      Emourgeon</a>. The project has been revived by
+      <a href="https://twitter.com/mnt_io">Ivan Enderlin</a>. The source code of
+      this project can ben found on
+      <a href="https://github.com/jekxyl/jekxyl">the <code>jekxyl/jekxyl</code>
+      Github repository</a>.
+    </p>
+    <p>
+      To get help, feel free to join
+      <a href="irc://irc.freenode.org/hoaproject">the <code>#hoaproject</code>
+      channel on Freenode</a>.
+    </p>
+
+    <h2 class="raw">License</h2>
+
+    <p>This is a free software, under the <code>BSD-3-Clause</code> license.</p>
+    <pre><code>                                New BSD License
 
 
 
@@ -26,4 +59,6 @@ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
 INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
+POSSIBILITY OF SUCH DAMAGE.</code></pre>
+  </article>
+</overlay>

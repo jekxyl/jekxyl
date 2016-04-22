@@ -11,6 +11,7 @@
       <li>Gordon Freeman</li>
       <li>Scientist</li>
       <li>Hacker</li>
+      <li><a href="@page:pathname=About.html">About</a></li>
     </ul>
   </aside>
 
